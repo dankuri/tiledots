@@ -20,7 +20,8 @@
         "cpu",
         "memory",
         "hyprland/language",
-        "battery"
+        "battery",
+        "custom/power"
     ],
     "keyboard-state": {
         "numlock": true,
@@ -116,6 +117,10 @@
             ]
         },
         "on-click": "pavucontrol"
+    },
+    "custom/power": {
+        "format": "⏻",
+        "on-click": "nwg-bar"
     }
 }
 // vim:ft=jsonc

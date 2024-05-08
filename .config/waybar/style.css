@@ -221,7 +221,8 @@ window#waybar {
 
 #custom-power {
     font-size: 18px;
-    padding-right: 1rem;
+    margin-left: 0;
+    padding-right: 18px;
 }
 
 #custom-launcher {
