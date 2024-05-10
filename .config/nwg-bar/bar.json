@@ -6,7 +6,7 @@
   },
   {
     "label": "Logout",
-    "exec": "pkill Hyprland || pkill sway || loginctl terminate-user $USER",
+    "exec": "loginctl terminate-user $USER",
     "icon": "/usr/share/nwg-bar/images/system-log-out.svg"
   },
   {
