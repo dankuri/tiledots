@@ -44,12 +44,12 @@
         "interval": 1
     },
     "cpu": {
-        "format": "{usage}%  ",
+        "format": "{usage}% ",
         "on-click": "kitty htop -s PERCENT_CPU",
         "tooltip": false
     },
     "memory": {
-        "format": "{}%  ",
+        "format": "{}% ",
         "on-click": "kitty htop -s PERCENT_MEM"
     },
     "battery": {
@@ -59,29 +59,29 @@
             "critical": 15
         },
         "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}%  ",
+        "format-charging": "{capacity}% ",
         "format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": [
-            " ",
-            " ",
-            " ",
-            " ",
-            " "
+            "",
+            "",
+            "",
+            "",
+            ""
         ]
     },
     "hyprland/workspaces": {},
     "hyprland/language": {
-        "format": "{short}"
+        "format": "{short} "
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{signalStrength}%  ",
-        "format-ethernet": "{ipaddr}/{cidr}  ",
-        "tooltip-format": "{ifname} via {gwaddr}  ",
-        "format-linked": "{ifname} (No IP)  ",
+        "format-wifi": "{signalStrength}% ",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
@@ -91,8 +91,8 @@
         "on-click": "pavucontrol",
         "format-icons": [
             "",
-            " ",
-            " "
+            "",
+            ""
         ]
     },
     "pulseaudio": {
@@ -102,7 +102,7 @@
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",
         "format-source": "",
-        "format-source-muted": " ",
+        "format-source-muted": "",
         "format-icons": {
             "headphone": " ",
             "hands-free": " ",
