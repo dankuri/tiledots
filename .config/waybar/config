@@ -1,14 +1,12 @@
 {
     "layer": "top", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
-    "height": 36, // Waybar height (to be removed for auto height)
+    // "height": 36, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
-    "spacing": 4, // Gaps between modules (4px)
-    // Choose the order of the modules
+    "spacing": 4,
     "modules-left": [
         "hyprland/workspaces",
         "hyprland/window"
-        // "hyprland/submap"
     ],
     "modules-center": [
         "clock"
@@ -83,17 +81,7 @@
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
-    },
-    "wireplumber": {
-        "format": "{volume}% {icon}",
-        "format-muted": "",
-        "on-click": "pavucontrol",
-        "format-icons": [
-            "",
-            "",
-            ""
-        ]
+        "on-click": "wezterm start --class nmtui -e nmtui"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
