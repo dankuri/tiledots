@@ -1,12 +1,10 @@
 {
-    "layer": "top", // Waybar at top layer
-    "position": "top", // Waybar position (top|bottom|left|right)
-    // "height": 36, // Waybar height (to be removed for auto height)
-    // "width": 1280, // Waybar width
-    "spacing": 4,
+    "layer": "top",
+    "position": "top",
     "modules-left": [
         "hyprland/workspaces",
-        "hyprland/window"
+        "hyprland/window",
+        "mpris"
     ],
     "modules-center": [
         "clock"
@@ -14,101 +12,129 @@
     "modules-right": [
         "tray",
         "pulseaudio",
-        "network",
-        "cpu",
-        "memory",
+        "bluetooth",
         "hyprland/language",
-        "battery",
+        "idle_inhibitor",
+        "custom/lock",
         "custom/power"
     ],
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": "{name} {icon}",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
-        }
+    "hyprland/workspaces": {},
+    "hyprland/window": {
+        "format": "{initialTitle}",
+        "icon": true
     },
-    "tray": {
-        "icon-size": 22,
-        "spacing": 10,
-        "on-click": "hyprctl dispatch workspace next_on_output"
+    "hyprland/language": {
+        "format": "{short}"
     },
     "clock": {
-        // "timezone": "America/New_York",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "{:%Y-%m-%d %H:%M:%S}",
+        "format-alt": "{:%d/%m/%Y}",
+        "format": "{:%H:%M:%S}",
         "interval": 1
     },
-    "cpu": {
-        "format": "{usage}% ",
-        "on-click": "kitty htop -s PERCENT_CPU",
-        "tooltip": false
-    },
-    "memory": {
-        "format": "{}% ",
-        "on-click": "kitty htop -s PERCENT_MEM"
-    },
-    "battery": {
-        "states": {
-            // "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-        "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            ""
-        ]
-    },
-    "hyprland/workspaces": {},
-    "hyprland/language": {
-        "format": "{short} "
-    },
-    "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{signalStrength}% ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
-        "on-click": "wezterm start --class nmtui -e nmtui"
+    "tray": {
+        "icon-size": 24,
+        "spacing": 10,
+        "show-passive-items": true
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "",
-        "format-source-muted": "",
+        "format": "{icon} {volume}%",
+        "format-muted": " ",
         "format-icons": {
-            "headphone": " ",
-            "hands-free": " ",
-            "headset": " ",
-            "phone": " ",
-            "portable": " ",
-            "car": " ",
             "default": [
                 "",
-                " ",
-                " "
+                "",
+                ""
             ]
         },
-        "on-click": "pavucontrol"
+        "on-click": "pavucontrol -t 3"
+    },
+    "bluetooth": {
+        "format": " {status}",
+        "format-disabled": "󰂲", // an empty format will hide the module
+        "format-connected": " {device_alias}",
+        "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+        // "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
+        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+        "on-click": "ghostty --class=com.example.bluetui -e bluetui"
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": " ",
+            "deactivated": " "
+        }
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}",
+        "format-charging": "",
+        "format-plugged": "",
+        "format-alt": "{icon}",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{icon}",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    "mpris": {
+        "format": "{player_icon} {dynamic}",
+        "format-paused": "{status_icon} <i>{dynamic}</i>",
+        "player-icons": {
+            "default": "󰎇"
+        },
+        "status-icons": {
+            "paused": ""
+        },
+        "dynamic-order": [
+            "artist",
+            "title"
+        ],
+        "ignored-players": [
+            "firefox",
+            "plasma-browser-integration"
+        ]
+    },
+    "custom/lock": {
+        "tooltip": false,
+        "on-click": "hyprlock & disown",
+        "format": ""
     },
     "custom/power": {
-        "format": "⏻",
-        "on-click": "nwg-bar"
+        "tooltip": false,
+        "on-click": "nwg-bar &",
+        "format": "襤"
     }
 }
 // vim:ft=jsonc
