@@ -134,7 +134,7 @@
     "custom/power": {
         "tooltip": false,
         "on-click": "nwg-bar &",
-        "format": "襤"
+        "format": "水"
     }
 }
 // vim:ft=jsonc
