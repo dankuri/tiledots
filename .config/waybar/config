@@ -21,6 +21,10 @@
     "hyprland/workspaces": {},
     "hyprland/window": {
         "format": "{initialTitle}",
+        "rewrite": {
+            // bruh
+            ".* - Brave": "Brave"
+        },
         "icon": true
     },
     "hyprland/language": {
@@ -138,6 +142,7 @@
         ],
         "ignored-players": [
             "firefox",
+            "brave",
             "plasma-browser-integration"
         ]
     },
