@@ -1,5 +1,5 @@
 configuration {
-    modes: [window,drun,run,ssh,emoji,calc,combi];
+    modes: [window,drun,run,ssh,calc,combi];
 }
 
 @theme "catppuccin-default"
