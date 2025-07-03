@@ -4,6 +4,8 @@
     "modules-left": [
         "hyprland/workspaces",
         "hyprland/window",
+        "niri/workspaces",
+        "niri/window",
         "mpris"
     ],
     "modules-center": [
@@ -14,11 +16,13 @@
         "pulseaudio",
         "bluetooth",
         "hyprland/language",
+        "niri/language",
         "idle_inhibitor",
         "custom/lock",
         "custom/power"
     ],
     "hyprland/workspaces": {},
+    "niri/workspaces": {},
     "hyprland/window": {
         "format": "{initialTitle}",
         "rewrite": {
@@ -27,7 +31,14 @@
         },
         "icon": true
     },
+    "niri/window": {
+        "format": "",
+        "icon": true
+    },
     "hyprland/language": {
+        "format": "{short}"
+    },
+    "niri/language": {
         "format": "{short}"
     },
     "clock": {
