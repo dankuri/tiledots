@@ -1,3 +1,13 @@
+grace=5
+grace-no-mouse
+clock
+indicator
+indicator-caps-lock
+show-keyboard-layout
+show-failed-attempts
+daemonize
+image=/usr/share/wallpapers/cachyos-wallpapers/cachygalaxy99.jpg
+effect-blur=40x3
 color=1e1e2e
 bs-hl-color=f5e0dc
 caps-lock-bs-hl-color=f5e0dc
