@@ -159,7 +159,7 @@
     },
     "custom/lock": {
         "tooltip": false,
-        "on-click": "hyprlock & disown",
+        "on-click": "loginctl lock-session",
         "format": ""
     },
     "custom/power": {

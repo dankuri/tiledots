@@ -9,7 +9,7 @@ What's included:
 - [rofi-wayland](https://github.com/lbonn/rofi)
 - [nwg-bar](https://github.com/nwg-piotr/nwg-bar)
 - [Hyprland](https://github.com/hyprwm/Hyprland) [hyprpaper](https://github.com/hyprwm/hyprpaper) [hyprlock](https://github.com/hyprwm/hyprlock) [hypridle](https://github.com/hyprwm/hypridle)
-- [niri](https://github.com/YaLTeR/niri) [swaylock](https://github.com/mortie/swaylock-effects)
+- [niri](https://github.com/YaLTeR/niri) [swaylock](https://github.com/mortie/swaylock-effects) [swayidle](https://github.com/swaywm/swayidle)
 - [waybar](https://github.com/Alexays/Waybar)
 
 Installation of dotfiles:
