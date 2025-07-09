@@ -54,6 +54,7 @@
 #mpris,
 #pulseaudio,
 #tray,
+#custom-night_light,
 #custom-lock,
 #custom-power {
   background-color: @surface0;
@@ -64,6 +65,14 @@
 #clock {
   color: @blue;
   border-radius: 1rem;
+}
+
+#custom-night_light {
+  padding-right: 0;
+}
+
+#custom-night_light.on {
+  color: @peach;
 }
 
 #idle_inhibitor {
