@@ -96,6 +96,10 @@ output "DP-1" {
     // position x=1280 y=0
 }
 
+output "eDP-1" {
+    scale 1
+}
+
 // Settings that influence how windows are positioned and sized.
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
@@ -267,6 +271,7 @@ cursor {
 spawn-at-startup "waybar"
 spawn-at-startup "hyprpaper"
 spawn-at-startup "swayidle" "-w"
+spawn-at-startup "swayosd-server"
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
 spawn-at-startup "1password" "--silent"
@@ -388,13 +393,13 @@ binds {
 
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.
-    XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
-    XF86AudioMute        allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
-    XF86AudioMicMute     allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
-    XF86AudioPlay        allow-when-locked=true { spawn "playerctl" "play-pause";}
-    XF86AudioNext        allow-when-locked=true { spawn "playerctl" "next";}
-    XF86AudioPrev        allow-when-locked=true { spawn "playerctl" "previous";}
+    XF86AudioRaiseVolume allow-when-locked=true { spawn "swayosd-client" "--output-volume" "raise"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn "swayosd-client" "--output-volume" "lower"; }
+    XF86AudioMute        allow-when-locked=true { spawn "swayosd-client" "--output-volume" "mute-toggle"; }
+    XF86AudioMicMute     allow-when-locked=true { spawn "swayosd-client" "--input-volume" "mute-toggle"; }
+    XF86AudioPlay        allow-when-locked=true { spawn "swayosd-client" "--playerctl" "play-pause";}
+    XF86AudioNext        allow-when-locked=true { spawn "swayosd-client" "--playerctl" "next";}
+    XF86AudioPrev        allow-when-locked=true { spawn "swayosd-client" "--playerctl" "prev";}
     // for builtin monitor
     // XF86MonBrightnessUp   allow-when-locked=true {spawn "swayosd-client" "--brightness" "raise";}
     // XF86MonBrightnessDown allow-when-locked=true {spawn "swayosd-client" "--brightness" "lower";}
