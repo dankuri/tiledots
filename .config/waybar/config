@@ -14,7 +14,6 @@
     "modules-right": [
         "tray",
         "pulseaudio",
-        "bluetooth",
         "hyprland/language",
         "niri/language",
         "idle_inhibitor",
@@ -46,6 +45,7 @@
         "format-alt": "{:%d/%m/%Y}",
         "format": "{:%H:%M:%S}",
         "interval": 1,
+        "locale": "en_IE.UTF-8", // monday as 1st day
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "calendar": {
             "mode": "year",
@@ -70,8 +70,10 @@
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{icon} {volume}%",
-        "format-muted": " ",
+        "format": "{icon}{volume}%",
+        "format-bluetooth": "{icon}{volume}%",
+        "format-muted": " {volume}%",
+        "format-bluetooth-muted": "{volume}%",
         "format-icons": {
             "default": [
                 "",
