@@ -4,14 +4,10 @@
   "widget-config": {
     "mpris": {
       "show-album-art": "when-available",
-      "image-size": 100
+      "image-size": 100,
+      "autohide": true
     }
   },
-  "widgets": [
-    "mpris",
-    "volume",
-    "title",
-    "dnd",
-    "notifications"
-  ]
+  "cssPriority": "user",
+  "widgets": ["mpris", "volume", "title", "dnd", "notifications"]
 }
