@@ -329,6 +329,12 @@ window-rule {
     open-floating true
 }
 
+window-rule {
+    match app-id="thunderbird"
+    exclude title="- Mozilla Thunderbird$"
+    open-floating true
+}
+
 /-window-rule {
     match title="gsr ui"
     open-floating true
