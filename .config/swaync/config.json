@@ -1,6 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/ErikReider/SwayNotificationCenter/refs/heads/main/src/configSchema.json",
   "fit-to-screen": true,
+  "hide-on-action": false,
   "widget-config": {
     "mpris": {
       "show-album-art": "when-available",
