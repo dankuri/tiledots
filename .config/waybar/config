@@ -68,7 +68,8 @@
     "tray": {
         "icon-size": 24,
         "spacing": 10,
-        "show-passive-items": true
+        "show-passive-items": true,
+        "reverse-direction": true
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
@@ -109,7 +110,9 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}%"
+        "format": "{capacity}%",
+        "format-charging": "󱐋{capacity}%",
+        "format-plugged": "󱐋{capacity}%"
     },
     "backlight": {
         "device": "intel_backlight",
