@@ -7,7 +7,6 @@
         "hyprland/window",
         "niri/workspaces",
         "niri/window",
-        "mpris"
     ],
     "modules-center": [
         "clock"
@@ -127,25 +126,6 @@
             "",
             "",
             ""
-        ]
-    },
-    "mpris": {
-        "format": "{player_icon} {dynamic}",
-        "format-paused": "{status_icon} <i>{dynamic}</i>",
-        "player-icons": {
-            "default": "󰎇"
-        },
-        "status-icons": {
-            "paused": ""
-        },
-        "dynamic-order": [
-            "artist",
-            "title"
-        ],
-        "ignored-players": [
-            "firefox",
-            "brave",
-            "plasma-browser-integration"
         ]
     },
     "custom/night_light": {
