@@ -6,11 +6,11 @@ For general dotfiles check [my dotfiles repo](https://github.com/dankuri/dotfile
 
 What's included:
 
-- [rofi-wayland](https://github.com/lbonn/rofi)
-- [nwg-bar](https://github.com/nwg-piotr/nwg-bar)
 - [Hyprland](https://github.com/hyprwm/Hyprland) [hyprpaper](https://github.com/hyprwm/hyprpaper) [hyprlock](https://github.com/hyprwm/hyprlock) [hypridle](https://github.com/hyprwm/hypridle)
+- ~~[waybar](https://github.com/Alexays/Waybar)~~ [caelestia shell](https://github.com/caelestia-dots/shell)
 - [niri](https://github.com/YaLTeR/niri) [swaylock](https://github.com/mortie/swaylock-effects) [swayidle](https://github.com/swaywm/swayidle)
-- [waybar](https://github.com/Alexays/Waybar)
+- [rofi (now with wayland)](https://github.com/davatorium/rofi)
+- [nwg-bar](https://github.com/nwg-piotr/nwg-bar)
 
 Installation of dotfiles:
 
