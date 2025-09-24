@@ -61,9 +61,7 @@
     },
     "idle": {
       "inhibitWhenAudio": true,
-      "lockTimeout": 180,
-      "dpmsTimeout": 300,
-      "sleepTimeout": 600
+      "timeouts": []
     }
   },
   "background": {
@@ -339,6 +337,16 @@
   },
   "utilities": {
     "enabled": true,
-    "maxToasts": 4
+    "maxToasts": 4,
+    "toasts": {
+      "audioInputChanged": true,
+      "audioOutputChanged": true,
+      "capsLockChanged": true,
+      "chargingChanged": true,
+      "configLoaded": true,
+      "dndChanged": true,
+      "gameModeChanged": true,
+      "numLockChanged": true
+    }
   }
 }
