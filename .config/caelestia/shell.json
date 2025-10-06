@@ -309,7 +309,7 @@
   },
   "services": {
     "audioIncrement": 0.1,
-    "defaultPlayer": "Cider",
+    "defaultPlayer": "Spotify",
     "gpuType": "",
     "playerAliases": [
       { "from": "com.github.th_ch.youtube_music", "to": "YT Music" }
