@@ -7,6 +7,7 @@
     },
     "font": {
       "family": {
+        "clock": "Rubik",
         "material": "Material Symbols Rounded",
         "mono": "CaskaydiaCove NF",
         "sans": "Rubik"
@@ -33,7 +34,9 @@
   "general": {
     "apps": {
       "terminal": ["ghostty"],
-      "audio": ["pavucontrol"]
+      "audio": ["pavucontrol"],
+      "playback": ["mpv"],
+      "explorer": ["dolphin"]
     },
     "battery": {
       "warnLevels": [
@@ -60,6 +63,7 @@
       "criticalLevel": 3
     },
     "idle": {
+      "lockBeforeSleep": true,
       "inhibitWhenAudio": true,
       "timeouts": []
     }
@@ -137,6 +141,7 @@
     },
     "tray": {
       "background": false,
+      "compact": false,
       "iconSubs": [],
       "recolour": false
     },
