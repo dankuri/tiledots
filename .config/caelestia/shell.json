@@ -154,7 +154,13 @@
       "occupiedLabel": "󰮯",
       "perMonitorWorkspaces": true,
       "showWindows": true,
-      "shown": 5
+      "shown": 5,
+      "specialWorkspaceIcons": [
+        {
+          "name": "steam",
+          "icon": "sports_esports"
+        }
+      ]
     }
   },
   "border": {
@@ -314,6 +320,7 @@
   },
   "services": {
     "audioIncrement": 0.1,
+    "maxVolume": 1.0,
     "defaultPlayer": "Spotify",
     "gpuType": "",
     "playerAliases": [
@@ -351,7 +358,20 @@
       "configLoaded": true,
       "dndChanged": true,
       "gameModeChanged": true,
-      "numLockChanged": true
+      "kbLayoutChanged": false,
+      "numLockChanged": true,
+      "vpnChanged": true,
+      "nowPlaying": false
+    },
+    "vpn": {
+      "enabled": false,
+      "provider": [
+        {
+          "name": "wireguard",
+          "interface": "your-connection-name",
+          "displayName": "Wireguard (Your VPN)"
+        }
+      ]
     }
   }
 }
