@@ -7,7 +7,7 @@ For general dotfiles check [my dotfiles repo](https://github.com/dankuri/dotfile
 What's included:
 
 - [Hyprland](https://github.com/hyprwm/Hyprland) [hyprpaper](https://github.com/hyprwm/hyprpaper) [hyprlock](https://github.com/hyprwm/hyprlock) [hypridle](https://github.com/hyprwm/hypridle)
-- ~~[waybar](https://github.com/Alexays/Waybar)~~ [caelestia shell](https://github.com/caelestia-dots/shell) [**DankMaterialShell**](https://github.com/AvengeMedia/DankMaterialShell)
+- [waybar](https://github.com/Alexays/Waybar) -> [**DankMaterialShell**](https://github.com/AvengeMedia/DankMaterialShell)
 - [niri](https://github.com/YaLTeR/niri) [swaylock](https://github.com/mortie/swaylock-effects) [swayidle](https://github.com/swaywm/swayidle) [swaync](https://github.com/ErikReider/SwayNotificationCenter)
 - [rofi](https://github.com/davatorium/rofi)
 - [nwg-bar](https://github.com/nwg-piotr/nwg-bar)

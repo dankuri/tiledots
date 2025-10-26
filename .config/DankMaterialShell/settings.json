@@ -217,6 +217,8 @@
   "widgetBackgroundColor": "sch",
   "surfaceBase": "s",
   "wallpaperFillMode": "Fill",
+  "blurredWallpaperLayer": false,
+  "blurWallpaperOnOverview": false,
   "notificationTimeoutLow": 5000,
   "notificationTimeoutNormal": 10000,
   "notificationTimeoutCritical": 0,
