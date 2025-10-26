@@ -1,0 +1,11 @@
+{
+  "emojiLauncher": {
+    "enabled": true
+  },
+  "calculator": {
+    "enabled": true,
+    "trigger": "=",
+    "useQalc": true
+  }
+}
+
