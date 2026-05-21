@@ -33,8 +33,8 @@ local terminal = "ghostty"
 local file_manager = "dolphin"
 local browser = "helium-browser"
 local menu = "vicinae toggle || " .. ipc("launcher toggle")
-local emoji = "vicinae vicinae://extensions/vicinae/core/search-emojis || " .. ipc("launcher toggleQuery :e")
-local windows = "vicinae vicinae://extensions/vicinae/wm/switch-windows || " .. ipc("launcher toggleQuery !")
+local emoji = "vicinae vicinae://launch/core/search-emojis || " .. ipc("launcher toggleQuery :e")
+local windows = "vicinae vicinae://launch/wm/switch-windows || " .. ipc("launcher toggleQuery !")
 local screenshot_area = "grimblast --freeze --notify copysave area $HOME/Pictures/Screenshots/\"$(date '+%FT%T.%N').png\""
 local screenshot_screen = "grimblast --freeze --notify copysave output $HOME/Pictures/Screenshots/\"$(date '+%FT%T.%N').png\""
 
@@ -244,7 +244,7 @@ hl.bind(mod("SHIFT + comma"), hl.dsp.exec_cmd("ddcutil -b 8 setvcp 60 0x0f"))
 hl.bind(mod("SHIFT + period"), hl.dsp.exec_cmd("ddcutil -b 8 setvcp 60 0x11"))
 
 -- clipboard
-hl.bind(mod("V"), hl.dsp.exec_cmd("vicinae vicinae://extensions/vicinae/clipboard/history || " .. ipc("launcher clipboard")))
+hl.bind(mod("V"), hl.dsp.exec_cmd("vicinae vicinae://launch/clipboard/history || " .. ipc("launcher clipboard")))
 
 -- discord mute
 hl.bind(mod("M"), hl.dsp.send_shortcut({ mods = "CTRL SHIFT", key = "M", window = "class:^(discord)$" }))
