@@ -51,6 +51,7 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("xembedsniproxy")
 	hl.exec_cmd("vicinae server")
 	hl.exec_cmd("sleep 5s && bitwarden --silent")
+	hl.exec_cmd("gsr-ui")
 end)
 
 -------------------------------
@@ -248,6 +249,9 @@ hl.bind(mod("V"), hl.dsp.exec_cmd("vicinae vicinae://launch/clipboard/history ||
 
 -- discord mute
 hl.bind(mod("M"), hl.dsp.send_shortcut({ mods = "CTRL SHIFT", key = "M", window = "class:^(discord)$" }))
+
+-- gpu-screen-recorder-ui
+hl.bind("ALT + Print", hl.dsp.exec_cmd("gsr-ui-cli replay-save"))
 
 --------------------------------
 ---- WINDOWS AND WORKSPACES ----
