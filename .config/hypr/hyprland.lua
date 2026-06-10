@@ -27,14 +27,14 @@ hl.monitor({
 ---- MY PROGRAMS ----
 ---------------------
 
-local ipc = function(args) return "dms ipc call " .. args end
+local ipc = function(args) return "noctalia msg " .. args end
 
 local terminal = "ghostty"
 local file_manager = "dolphin"
 local browser = "helium-browser"
-local menu = "vicinae toggle || " .. ipc("launcher toggle")
-local emoji = "vicinae vicinae://launch/core/search-emojis || " .. ipc("launcher toggleQuery :e")
-local windows = "vicinae vicinae://launch/wm/switch-windows || " .. ipc("launcher toggleQuery !")
+local menu = "vicinae toggle || " .. ipc("panel-toggle launcher")
+local emoji = "vicinae vicinae://launch/core/search-emojis || " .. ipc("panel-toggle launcher /emo")
+local windows = "vicinae vicinae://launch/wm/switch-windows || " .. ipc("window-switcher")
 local screenshot_area = "grimblast --freeze --notify copysave area $HOME/Pictures/Screenshots/\"$(date '+%FT%T.%N').png\""
 local screenshot_screen = "grimblast --freeze --notify copysave output $HOME/Pictures/Screenshots/\"$(date '+%FT%T.%N').png\""
 
@@ -43,7 +43,7 @@ local screenshot_screen = "grimblast --freeze --notify copysave output $HOME/Pic
 -------------------
 
 hl.on("hyprland.start", function()
-	hl.exec_cmd("dms run")
+	hl.exec_cmd("noctalia")
 	hl.exec_cmd("/usr/lib/pam_kwallet_init")
 	hl.exec_cmd("playerctld daemon")
 	hl.exec_cmd("dolphin --daemon")
@@ -166,12 +166,12 @@ hl.bind(mod("SHIFT + V"), hl.dsp.window.float())
 hl.bind(mod("ALT + V"), hl.dsp.window.cycle_next())
 hl.bind(mod("CTRL + SHIFT + L"), hl.dsp.exec_cmd("loginctl lock-session"))
 hl.bind(mod("A"), hl.dsp.exec_cmd("~/.local/bin/audio_changer.py"))
-hl.bind(mod("N"), hl.dsp.exec_cmd(ipc("notifications toggle")))
+hl.bind(mod("N"), hl.dsp.exec_cmd(ipc("panel-toggle control-center notifications")))
 hl.bind(mod("up"), hl.dsp.send_shortcut({ mods = "", key = "page_up" }))
 hl.bind(mod("down"), hl.dsp.send_shortcut({ mods = "", key = "page_down" }))
-hl.bind(mod("escape"), hl.dsp.exec_cmd("dms restart"))
-hl.bind(mod("grave"), hl.dsp.exec_cmd(ipc("hypr toggleOverview")))
-hl.bind(mod("comma"), hl.dsp.exec_cmd(ipc("settings toggle")))
+hl.bind(mod("escape"), hl.dsp.exec_cmd("pkill noctalia && noctalia || noctalia"))
+hl.bind(mod("grave"), hl.dsp.exec_cmd(ipc("window-switcher")))
+hl.bind(mod("comma"), hl.dsp.exec_cmd(ipc("settings-toggle")))
 
 -- move focus
 hl.bind(mod("H"), hl.dsp.focus({ direction = "l" }))
@@ -233,11 +233,11 @@ hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1.0 @DEFAUL
 hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%-"))
 hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"))
 hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"))
-hl.bind("XF86AudioPlay", hl.dsp.exec_cmd(ipc("mpris playPause")))
-hl.bind("XF86AudioNext", hl.dsp.exec_cmd(ipc("mpris next")))
-hl.bind("XF86AudioPrev", hl.dsp.exec_cmd(ipc("mpris previous")))
-hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd(ipc("brightness increment 5 ''")))
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(ipc("brightness decrement 5 ''")))
+hl.bind("XF86AudioPlay", hl.dsp.exec_cmd(ipc("media toggle")))
+hl.bind("XF86AudioNext", hl.dsp.exec_cmd(ipc("media next")))
+hl.bind("XF86AudioPrev", hl.dsp.exec_cmd(ipc("media previous")))
+hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd(ipc("brightness-up")))
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(ipc("brightness-down")))
 
 -- switch to DP-1
 hl.bind(mod("SHIFT + comma"), hl.dsp.exec_cmd("ddcutil -b 8 setvcp 60 0x0f"))
@@ -245,7 +245,7 @@ hl.bind(mod("SHIFT + comma"), hl.dsp.exec_cmd("ddcutil -b 8 setvcp 60 0x0f"))
 hl.bind(mod("SHIFT + period"), hl.dsp.exec_cmd("ddcutil -b 8 setvcp 60 0x11"))
 
 -- clipboard
-hl.bind(mod("V"), hl.dsp.exec_cmd("vicinae vicinae://launch/clipboard/history || " .. ipc("launcher clipboard")))
+hl.bind(mod("V"), hl.dsp.exec_cmd("vicinae vicinae://launch/clipboard/history || " .. ipc("panel-toggle clipboard")))
 
 -- discord mute
 hl.bind(mod("M"), hl.dsp.send_shortcut({ mods = "CTRL SHIFT", key = "M", window = "class:^(discord)$" }))
@@ -317,4 +317,14 @@ hl.layer_rule({
 	blur = true,
 	no_anim = true,
 	ignore_alpha = 0,
+})
+
+hl.layer_rule({
+	name = "noctalia",
+	match = {
+		namespace = "^noctalia-(bar-.+|notification|dock|panel)$",
+	},
+	ignore_alpha = 0.5,
+	blur = true,
+	blur_popups = true,
 })
