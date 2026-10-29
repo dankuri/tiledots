@@ -35,8 +35,8 @@ local browser = "helium-browser"
 local menu = "vicinae toggle || " .. ipc("panel-toggle launcher")
 local emoji = "vicinae vicinae://launch/core/search-emojis || " .. ipc("panel-toggle launcher /emo")
 local windows = "vicinae vicinae://launch/wm/switch-windows || " .. ipc("window-switcher")
-local screenshot_area = "grimblast --freeze --notify copysave area $HOME/Pictures/Screenshots/\"$(date '+%FT%T.%N').png\""
-local screenshot_screen = "grimblast --freeze --notify copysave output $HOME/Pictures/Screenshots/\"$(date '+%FT%T.%N').png\""
+local screenshot_area = ipc("screenshot-region") .. " || grimblast --freeze --notify copysave area $HOME/Pictures/Screenshots/\"$(date '+%FT%T.%N').png\""
+local screenshot_screen = ipc("screenshot-fullscreen") .. " || grimblast --freeze --notify copysave output $HOME/Pictures/Screenshots/\"$(date '+%FT%T.%N').png\""
 
 -------------------
 ---- AUTOSTART ----
@@ -225,6 +225,7 @@ hl.bind(mod("mouse:273"), hl.dsp.window.resize(), { mouse = true })
 
 hl.bind("Print", hl.dsp.exec_cmd(screenshot_area))
 hl.bind("SHIFT + Print", hl.dsp.exec_cmd(screenshot_screen))
+hl.bind("CTRL + SHIFT + Print", hl.dsp.exec_cmd(ipc("screenshot-annotate")))
 hl.bind(mod("S"), hl.dsp.exec_cmd(screenshot_area))
 hl.bind(mod("SHIFT + S"), hl.dsp.exec_cmd(screenshot_screen))
 
