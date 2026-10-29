@@ -248,8 +248,9 @@ hl.bind(mod("SHIFT + period"), hl.dsp.exec_cmd("ddcutil -b 8 setvcp 60 0x11"))
 -- clipboard
 hl.bind(mod("V"), hl.dsp.exec_cmd("vicinae vicinae://launch/clipboard/history || " .. ipc("panel-toggle clipboard")))
 
--- discord mute
-hl.bind(mod("M"), hl.dsp.send_shortcut({ mods = "CTRL SHIFT", key = "M", window = "class:^(discord)$" }))
+-- discord toggles
+hl.bind(mod("M"), hl.dsp.send_shortcut({ mods = "CTRL SHIFT", key = "M", window = "class:discord" })) -- mute
+hl.bind(mod("Print"), hl.dsp.global("discord:discord-toggle-go-live-streaming")) -- screenshare
 
 -- gpu-screen-recorder-ui
 hl.bind("ALT + Print", hl.dsp.exec_cmd("gsr-ui-cli replay-save"))
